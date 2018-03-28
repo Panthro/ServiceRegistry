@@ -2,11 +2,14 @@ name: service_registry
 
 description: A Service registry for dart.
 
-version: 0.0.1
+version: 1.0.1
 
-author: Panthro
+author: Rafael Roman <panthro.rafael@gmail.com>
 
-homepage: https://github.com/panthro/service_registry
+homepage: https://github.com/panthro/ServiceRegistry
+
+environment:
+  sdk: ">=1.23.0 <2.0.0"
 
 dev_dependencies:
   test: ^0.12.0

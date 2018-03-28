@@ -1,4 +1,5 @@
 # service_registry
+[![Version](https://img.shields.io/badge/version-1.0.1-blue.svg)](https://pub.dartlang.org/packages/service_registry)
 [![Build Status](https://travis-ci.org/Panthro/ServiceRegistry.svg?branch=master)](https://travis-ci.org/Panthro/ServiceRegistry)
 
 A service registry for doing IoC on Dart.
@@ -41,3 +42,9 @@ void main() {
 
 
 ```
+
+
+## TODO
+- [] add coverage reporting
+- [] check service type with the given register type
+- [] somehow make it not necessary to pass the generic `<ServiceType>` when using `ServiceRegistry.getService()`
