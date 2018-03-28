@@ -5,8 +5,8 @@ dart:
 
 script:
   - pub run test
-  - pub run dart_codecov_generator --report-on=bin/ --no-html --verbose
+#  - pub run dart_codecov_generator --report-on=bin/ --no-html --verbose
 
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+#after_success:
+#  - bash <(curl -s https://codecov.io/bash)
 
