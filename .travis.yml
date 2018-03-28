@@ -1,16 +1,10 @@
 language: dart
 
 dart:
-# Install the latest stable release
-  - stable
   - dev
 
-dart_task:
-  - dartfmt
-  - dartanalyzer: --fatal-warnings lib
-  - test
-
 script:
+  - pub run test
   - pub run dart_codecov_generator --report-on=bin/ --no-html --verbose
 
 after_success:
