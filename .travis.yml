@@ -1,0 +1,18 @@
+language: dart
+
+dart:
+# Install the latest stable release
+  - stable
+  - dev
+
+dart_task:
+  - dartfmt
+  - dartanalyzer: --fatal-warnings lib
+  - test
+
+script:
+  - pub run dart_codecov_generator --report-on=bin/ --no-html --verbose
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+

@@ -1,0 +1,14 @@
+name: service_registry
+
+description: A Service registry for dart.
+
+version: 0.0.1
+
+author: Panthro
+
+homepage: https://github.com/panthro/service_registry
+
+dev_dependencies:
+  test: ^0.12.0
+  coverage: "^0.7.0"
+  dart_codecov_generator: "^0.4.0"
