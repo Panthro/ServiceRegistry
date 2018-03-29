@@ -18,10 +18,16 @@ void main() {
   var counterService = ServiceRegistry.getService<CounterService>(CounterService);
   counterService.increment();
   counterService.increment();
-  print(ServiceRegistry.getService<CounterService>(CounterService).count); // 2
+  var currentCount = ServiceRegistry
+      .getService<CounterService>(CounterService)
+      .count;
+  print("CounterService current count [$currentCount]"); // 2
 
   counterService.decrement();
 
   // Actually you don't need to add the <CounterService> part, but it's handy for tools to know the type and provide code completion
-  print(ServiceRegistry.getService<CounterService>(CounterService).count); // 1
+  currentCount = ServiceRegistry
+      .getService<CounterService>(CounterService)
+      .count;
+  print("CounterService current count [$currentCount]"); // 1
 }
