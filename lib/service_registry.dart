@@ -46,8 +46,18 @@ class ServiceRegistry {
    */
   static T getService<T>(Type serviceType) {
     var service = _services[serviceType];
-    assert(service != null, "Service of type $serviceType was not previously registered");
+    assert(service != null,
+    "Service of type $serviceType was not previously registered");
     return _services[serviceType];
+  }
+
+  /**
+   * Whether a service of the given [serviceType] was previously registered
+   *
+   * This is an utility method as calling [getService] could throw an exception.
+   */
+  static bool hasService(Type serviceType) {
+    return _services.isNotEmpty && _services[serviceType] != null;
   }
 
   /**

@@ -46,7 +46,7 @@ void main() {
     expect(testService, equals(ServiceRegistry.getService(TestService)));
   });
 
-  test("shold clear the services", () {
+  test("Should clear the services", () {
     var testService = new TestService();
 
     expect(ServiceRegistry.services, isEmpty);
@@ -65,5 +65,23 @@ void main() {
     expect(() {
       ServiceRegistry.getService(TestService);
     }, throwsA(new isInstanceOf<AssertionError>()));
+  });
+
+  test("hasService shold return false when service was not previously registered", () {
+    expect(ServiceRegistry.services, isEmpty);
+
+    expect(ServiceRegistry.hasService(TestService), isFalse);
+
+    expect(ServiceRegistry.services, isEmpty);
+  });
+
+  test("hasService shold return true when service was previously registered", () {
+    var testService = new TestService();
+
+    expect(ServiceRegistry.services, isEmpty);
+
+    ServiceRegistry.registerService(TestService, testService);
+
+    expect(ServiceRegistry.hasService(TestService), isTrue);
   });
 }

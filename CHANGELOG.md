@@ -1,3 +1,7 @@
+## [1.0.3] - 29-03-2018.
+
+* Adding hasService method
+
 ## [1.0.2] - 29-03-2018.
 
 * Better Documentation
