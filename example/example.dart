@@ -13,21 +13,17 @@ class CounterService {
 }
 
 void main() {
-  ServiceRegistry.registerService<CounterService>(CounterService, new CounterService());
+  ServiceRegistry.registerService<CounterService>(new CounterService());
 
-  var counterService = ServiceRegistry.getService<CounterService>(CounterService);
+  var counterService = ServiceRegistry.getService<CounterService>();
   counterService.increment();
   counterService.increment();
-  var currentCount = ServiceRegistry
-      .getService<CounterService>(CounterService)
-      .count;
+  var currentCount = ServiceRegistry.getService<CounterService>().count;
   print("CounterService current count [$currentCount]"); // 2
 
   counterService.decrement();
 
   // Actually you don't need to add the <CounterService> part, but it's handy for tools to know the type and provide code completion
-  currentCount = ServiceRegistry
-      .getService<CounterService>(CounterService)
-      .count;
+  currentCount = ServiceRegistry.getService<CounterService>().count;
   print("CounterService current count [$currentCount]"); // 1
 }

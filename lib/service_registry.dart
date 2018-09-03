@@ -33,9 +33,9 @@ class ServiceRegistry {
    * Registers the given [service] for the given [type], overwriting any previously registered service for the type
    *
    */
-  static T registerService<T>(Type type, T service) {
+  static T registerService<T>(T service) {
     //TODO somehow check that service *is* an instance of type
-    _services[type] = service;
+    _services[T] = service;
     return service;
   }
 
@@ -44,11 +44,10 @@ class ServiceRegistry {
    *
    * Throws an [AssertError] if there is no registered service for the given [serviceType]
    */
-  static T getService<T>(Type serviceType) {
-    var service = _services[serviceType];
-    assert(service != null,
-    "Service of type $serviceType was not previously registered");
-    return _services[serviceType];
+  static T getService<T>() {
+    var service = _services[T];
+    assert(service != null, "Service of type $T was not previously registered");
+    return _services[T];
   }
 
   /**
