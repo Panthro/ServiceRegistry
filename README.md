@@ -1,5 +1,5 @@
 # service_registry
-[![Version](https://img.shields.io/badge/version-1.0.1-blue.svg)](https://pub.dartlang.org/packages/service_registry)
+[![Version](https://img.shields.io/badge/version-2.0.1-blue.svg)](https://pub.dartlang.org/packages/service_registry)
 [![Build Status](https://travis-ci.org/Panthro/ServiceRegistry.svg?branch=master)](https://travis-ci.org/Panthro/ServiceRegistry)
 
 A service registry for doing IoC on Dart.
@@ -27,17 +27,17 @@ class CounterService {
 }
 
 void main() {
-  ServiceRegistry.registerService<CounterService>(CounterService, new CounterService());
+  ServiceRegistry.registerService<CounterService>(new CounterService());
 
-  var counterService = ServiceRegistry.getService<CounterService>(CounterService);
+  var counterService = ServiceRegistry.getService<CounterService>();
   counterService.increment();
   counterService.increment();
-  print(ServiceRegistry.getService<CounterService>(CounterService).count); // 2
+  print(ServiceRegistry.getService<CounterService>().count); // 2
 
   counterService.decrement();
 
   // Actually you don't need to add the <CounterService> part, but it's handy for tools to know the type and provide code completion
-  print(ServiceRegistry.getService<CounterService>(CounterService).count); // 1
+  print(ServiceRegistry.getService<CounterService>().count); // 1
 }
 
 
@@ -47,4 +47,3 @@ void main() {
 ## TODO
 - [] add coverage reporting
 - [] check service type with the given register type
-- [] somehow make it not necessary to pass the generic `<ServiceType>` when using `ServiceRegistry.getService()`

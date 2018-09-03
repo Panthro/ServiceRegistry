@@ -2,7 +2,7 @@ name: service_registry
 
 description: A Service registry for dart. It is a simple attempt to provide some sort of IoC in a dart environment, it makes much easier to test components that rely on external services, because we can easily mock then and add to the registry
 
-version: 2.0.0
+version: 2.0.1
 
 author: Rafael Roman <panthro.rafael@gmail.com>
 
